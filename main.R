@@ -1,12 +1,10 @@
 happy<-function(n){
-  #split up the number into its digits.
+  #split up the input into its digits.
   x<-as.numeric(strsplit(as.character(n),"")[[1]])
   #initialize variables as needed
-  z<-0;j<-0
-  y<-vector("numeric",1)
-  #conduct primary operations
-  while(length(unique(y))==length(y)){ #to prevent infinite loops
-    j<-(j+1)
+  z<-0; y<-vector("numeric",1)
+  #square each digit, sum, and repeat process until infinite loop.
+  while(length(unique(y))==length(y)){
     z<-sum(x^2);y<-c(y,z)
     x<-as.numeric(strsplit(as.character(z),"")[[1]])
   }
